@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="./styles/styles.css">
+
+<center>
+    <img src=" https://cdn-icons.flaticon.com/png/512/2847/premium/2847017.png?token=exp=1659961134~hmac=0291171ce7a9469f62720ddb3a27d264" width=200/>
+    <h2>Logged in Successfully!</h2>
+    <h3> Please Complete the payment below </h3>
+<form>
+    <input type="radio" id="visa" name="card_type" value="VISA">
+    <label for="html">VISA</label><br>
+    <input type="radio" id="mastercard" name="card_type" value="MASTRECARD">
+    <label for="css">MASTERCARD</label><br>
+    <br>
+        <label for="accNum">CARD</label><br>
+        <input type="text" id="card" name="card" placeholder="EX:4111 1111 1111 1111" required maxlength="16"><br>
+        <label for="EXP">EXP</label><br>
+        <input required type="text" id="exp" name="exp" placeholder="EX: 02/28" maxlength="5">
+        <br>
+        <label for="EXP">CVV</label><br>
+        <input type="text" id="cvv" name="cvv" placeholder="EX: 728" required maxlength="3">
+        <br>
+        <label for="AMOUNT">AMOUNT</label><br>
+        <input type="text" id="amount" name="amount" placeholder="EX: 25.00" required>
+        <br>
+        <br>
+        <input type="button" value="PAY!" onClick="payAmount()">
+</form>
+
+<script>
+     
+     function payAmount(){
+
+        let cardValid = false;
+        let expValid = false;
+        let cvvValid = false;
+
+        let card = String(document.getElementById("card").value)
+    
+        let exp = String(document.getElementById("exp").value)
+        
+        let cvv = String(document.getElementById("cvv").value)
+        
+        let amount = Number(document.getElementById("amount").value)
+
+        if(card.length!=16){
+            alert("Please eneter a valid card , a valid card has 16 digits")
+        }else{
+            cardvalid = true;
+        }
+
+        let expYear = Number(exp.split('/')[1]);
+
+        if(expYear<21){
+            alert("Expiration date cannot be in the past , please check.")
+        }else{
+            cvvValid = true;
+        }
+
+        if(cvv.length!=3){
+            alert("please enter a valid cvv , a valid cvv has 3 digits.")
+        }else{
+            cvvValid = true;
+        }
+
+        if(amount<=0){
+            alert("Amount must be greater than zero")
+        }
+
+        console.log(cardValid+"   "+cvvValid+" "+expValid);
+
+        if(cardvalid && cvvValid && cvvValid){
+            window.location.href =  'success.html'
+        }
+
+    
+        console.log("Card : "+card);
+        console.log("exp:"+exp);
+        console.log("CVV :"+cvv);
+        console.log("Amount :"+amount);
+
+     }
+
+</script>
+
+    
+</center>

@@ -1,0 +1,30 @@
+input[type="text"] {
+    padding: 5px 5px;
+    font-size: 24px;
+    border-radius: 0%;
+    background-color: wheat;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+center{
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+input[type="button"] {
+    width: 20%;
+    padding: 20px 40px;
+    background-color: orange;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+}
+
+label{
+    background-color: wheat;
+    font-family: sans-serif;
+    font-weight: bold;
+}

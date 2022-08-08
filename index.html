@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+
+
+<head>
+    <title> QUICK-PAY </title>
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <center>
+
+    <form>
+        <label for="accNum">ACCOUNT NUMBER:</label><br>
+        <input type="text" id="accnum" name="accNum" placeholder="hint:use '12345' "><br>
+        <label for="lname">LAST NAME:</label><br>
+        <input type="text" id="lname" name="lname" placeholder="hint:use 'tarun' ">
+        <br>
+        <br>
+        <input type="button" value="LOGIN" onClick="Validate()">
+      </form>
+
+    </center>
+
+    <script>
+        function Validate(){
+
+            let isUserValid = false;
+            let accNum = String(document.getElementById("accnum").value);
+            let lastName = String(document.getElementById("lname").value);
+
+            if(accNum==12345 && lastName.toLowerCase()=="tarun"){
+                    isUserValid = true;
+            }
+            if(isUserValid){
+                window.location.href = 'payment.html'
+            }else{
+                alert("Invalid details!")
+            }
+        }
+    </script>
+</body>
+
+</html>
